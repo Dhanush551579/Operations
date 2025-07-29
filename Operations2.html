@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Operations</title>
+    <link href="Bootstrap/bootstrap.css" rel="stylesheet" />
+    <script>
+        function Operations(opt) {
+            debugger;
+            var a = document.getElementById("txtAVal").value;
+            var b = document.getElementById("txtBVal").value;
+            var res = "";
+
+            switch (opt) {
+                case "+": { res = parseInt(a) + parseInt(b); break; }
+                case "-": { res = parseInt(a) - parseInt(b); break; }
+                case "*": { res = parseInt(a) * parseInt(b); break; }
+                case "/": { res = parseInt(a) / parseInt(b); break; }
+                case "%": { res = parseInt(a) % parseInt(b); break; }
+                default: { console.log("Invalid Operator...!"); break; }
+            }
+
+            document.getElementById("spanRes").innerHTML = "Result : " + res;
+        }
+
+        function Add() {
+            Operations("+");
+        }
+
+        function Sub() {
+            Operations("-");
+        }
+
+        function Mul() {
+            Operations("*");
+        }
+
+        function Div() {
+            Operations("/");
+        }
+
+        function Rem() {
+            Operations("%");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row" style="background-color: yellow;color: red;margin-bottom: 20px;text-align: center;">
+        <div class="col-sm-12">
+            <h1>
+                Operations
+            </h1>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2"><b>Enter a value</b></div>
+        <div class="col-sm-3">
+            <input type="text" id="txtAVal" class="form-control" placeholder="Please enter a value...!" />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2"><b>Enter b value</b></div>
+        <div class="col-sm-3">
+            <input type="text" id="txtBVal" class="form-control" placeholder="Please enter b value...!" />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;text-align: center;">
+        <div class="col-sm-12">
+            <input onclick="Add();" type="button" id="btnAdd" class="btn btn-primary" value="Addition" />|
+            <input onclick="Sub();" type="button" id="btnSub" class="btn btn-danger" value="Substraction" />|
+            <input onclick="Mul();" type="button" id="btnMul" class="btn btn-success" value="Multiplication" />|
+            <input onclick="Div();" type="button" id="btnDiv" class="btn btn-warning" value="Division" />|
+            <input onclick="Rem();" type="button" id="btnRem" class="btn btn-info" value="Remainder" />
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;text-align: center;">
+        <div class="col-sm-12">
+            <span id="spanRes" style="text-align: center;color:green; font-weight: bold;font-size: 20px;"></span>
+        </div>
+    </div>
+</body>
+
+</html>
